@@ -1,5 +1,3 @@
-# Expense-tracker-app
-A modern expense tracker built with Next.js and React
 # 💰 Expense Tracker
 
 A modern expense tracking web app built with Next.js, React, and Tailwind CSS.
