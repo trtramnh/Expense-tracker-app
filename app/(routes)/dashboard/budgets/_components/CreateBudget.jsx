@@ -1,30 +1,62 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import EmojiPicker from "emoji-picker-react";
+
 import {
   Dialog,
   DialogContent,
   DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
 } from "../../../../../components/ui/dialog";
+import { Button } from "../../../../../components/ui/button";
+
 function CreateBudget() {
+  const [emojiIcon, setEmojiIcon] = useState("\uD83D\uDE00");
+  const [openEmojiPicker, setOpenEmojiPicker] = useState(false);
+
   return (
     <div>
-      <div
-        className="bg-slate-100 p-10 rounded-md
+      <Dialog>
+        <DialogTrigger asChild>
+          <div
+            className="bg-slate-100 p-10 rounded-md
       items-center flex flex-col border-2 border-dashed
       cursor-pointer hover:shadow-md"
-      >
-        <h2 className="text-3xl">+</h2>
-        <h2>Create New Budget</h2>
-      </div>
-      <Dialog>
-        <DialogTrigger>Open</DialogTrigger>
+          >
+            <h2 className="text-3xl">+</h2>
+            <h2>Create New Budget</h2>
+          </div>
+        </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogTitle>Create New Budget</DialogTitle>
             <DialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
+              Choose an icon for your new budget.
             </DialogDescription>
           </DialogHeader>
+          <div className="relative mt-3">
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => setOpenEmojiPicker((current) => !current)}
+            >
+              {emojiIcon}
+            </Button>
+
+            {openEmojiPicker && (
+              <div className="absolute z-10 mt-2">
+                <EmojiPicker
+                  onEmojiClick={(emojiData) => {
+                    setEmojiIcon(emojiData.emoji);
+                    setOpenEmojiPicker(false);
+                  }}
+                />
+              </div>
+            )}
+          </div>
         </DialogContent>
       </Dialog>
     </div>
