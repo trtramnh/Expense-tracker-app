@@ -1,11 +1,5 @@
-import { Outfit } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
-
-const outfit = Outfit({
-  variable: "--font-outfit",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Create Next App",
@@ -16,7 +10,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
-    <html lang="en" className={`${outfit.variable}  h-full antialiased`}>
+    <html
+      lang="en"
+      className="h-full antialiased"
+      style={{
+        "--font-outfit":
+          'ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      }}
+    >
       <body className="min-h-full flex flex-col font-(family-name:--font-outfit)">
         {children}
       </body>

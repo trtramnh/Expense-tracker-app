@@ -9,14 +9,14 @@ function Hero() {
       <div className="mx-auto max-w-7xl px-4 py-32 lg:flex">
         <div className="mx-auto max-w-xl text-center">
           <h1 className="text-3xl font-extrabold sm:text-5xl tracking-tight">
-            Manager Your Expense
+            Manager Your Project
             <strong className="font-extrabold text-indigo-600 sm:block">
-              Control your Money
+              Control your Projects
             </strong>
           </h1>
 
           <p className="mt-4 sm:text-xl/relaxed text-gray-500">
-            Start Creating your budget and save ton of money
+            Start Creating your projects 
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-4">

@@ -6,6 +6,8 @@ import { useUser } from "@clerk/nextjs";
 
 import { useRouter } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 function DashboardLayout({ children }) {
   const { user } = useUser();
   const router = useRouter();
@@ -20,7 +22,7 @@ function DashboardLayout({ children }) {
   //hàm này sẽ gọi api để lấy tất cả budget của user hiện tại, 
   //nếu không có budget nào thì sẽ push user đến trang tạo budget
   const checkUserBudgets = async () => {
-    const res = await fetch("/api/budgets");
+    const res = await fetch("/api/projects");
     const result = await res.json();
 
     console.log(result);

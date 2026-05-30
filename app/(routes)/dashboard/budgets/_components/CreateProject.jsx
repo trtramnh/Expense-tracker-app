@@ -27,14 +27,14 @@ function CreateBudget() {
       cursor-pointer hover:shadow-md"
           >
             <h2 className="text-3xl">+</h2>
-            <h2>Create New Budget</h2>
+            <h2>Create New Project</h2>
           </div>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Create New Budget</DialogTitle>
+            <DialogTitle>Create New Project</DialogTitle>
             <DialogDescription>
-              Choose an icon for your new budget.
+              Choose an icon for your new project.
             </DialogDescription>
           </DialogHeader>
           <div className="relative mt-3">

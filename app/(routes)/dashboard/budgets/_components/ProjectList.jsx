@@ -1,7 +1,7 @@
 import React from 'react'
-import CreateBudget from './CreateBudget'
+import CreateBudget from './CreateProject'
 
-function  BudgetList() {
+function  ProjectList() {
   return (
     <div className='mt-7
     md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4
@@ -11,4 +11,4 @@ function  BudgetList() {
   )
 }
 
-export default BudgetList
+export default ProjectList
